@@ -13,17 +13,18 @@ source:
 
 build:
   number: 0
-  skip: True  # [osx or linux or py27]
+  skip: True  # [osx or linux or py3k]
   features:
-    - vc14  # [py35 or py36]
+    - vc14
+  msvc_compiler: 14.0
 
 requirements:
   build:
     - git
     - python 2.7*
-    - vc 14  # [py35 or py36]
+    - vc 14
   run:
-    - vc 14  # [py35 or py36]
+    - vc 14
 
 test:
   commands:
