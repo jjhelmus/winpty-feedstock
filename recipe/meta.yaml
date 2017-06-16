@@ -28,7 +28,7 @@ requirements:
 test:
   commands:
     - winpty-agent --version
-    
+
 about:
   home: https://github.com/rprichard/winpty
   license: MIT

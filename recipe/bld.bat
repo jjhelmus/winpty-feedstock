@@ -17,10 +17,10 @@ if not exist build-gyp (
         exit /b 1
     )
 )
- 
+
 REM -------------------------------------------------------------------------
 REM -- Run gyp to generate MSVC project files.
-    
+
 cd src
 
 call ..\build-gyp\gyp.bat winpty.gyp -I configurations.gypi %GYP_ARGS%
@@ -37,9 +37,10 @@ msbuild winpty.sln /m /p:Platform=%MSVC_PLATFORM% || (
     exit /b 1
 )
 
-copy include\winpty.h %LIBRARY_INC% 
+copy include\winpty.h %LIBRARY_INC%
 copy include\winpty_constants.h %LIBRARY_INC%
 
+copy Release\%MSVC_PLATFORM%\winpty.lib %LIBRARY_LIB%
 copy Release\%MSVC_PLATFORM%\winpty.dll %LIBRARY_BIN%
 copy Release\%MSVC_PLATFORM%\winpty-agent.exe %LIBRARY_BIN%
 copy Release\%MSVC_PLATFORM%\winpty-debugserver.exe %LIBRARY_BIN%
