@@ -12,7 +12,7 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 0
+  number: 3
   skip: True  # [osx or linux or py3k]
   features:
     - vc14
