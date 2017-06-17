@@ -42,7 +42,7 @@ rem nmake install
 copy include\winpty.h %LIBRARY_INC%
 copy include\winpty_constants.h %LIBRARY_INC%
 
-copy bin\winpty.lib %LIBRARY_LIB%
-copy bin\winpty.dll %LIBRARY_BIN%
+copy lib\winpty.lib %LIBRARY_LIB%
+copy lib\winpty.dll %LIBRARY_BIN%
 copy bin\winpty-agent.exe %LIBRARY_BIN%
 copy bin\winpty-debugserver.exe %LIBRARY_BIN%
