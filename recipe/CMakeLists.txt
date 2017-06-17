@@ -5,6 +5,7 @@ cmake_minimum_required (VERSION 2.8)
 execute_process(COMMAND cmd /c "cd shared && GetCommitHash.bat" OUTPUT_VARIABLE WINPTY_COMMIT_HASH)
 execute_process(COMMAND cmd /c "cd shared && UpdateGenVersion.bat ${WINPTY_COMMIT_HASH}"
                 OUTPUT_VARIABLE ADDITIONAL_LIB)
+string(REGEX REPLACE "\n$" "" ADDITIONAL_LIB "${ADDITIONAL_LIB}")
 
 SET (EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 SET (LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
