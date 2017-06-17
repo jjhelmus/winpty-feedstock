@@ -9,16 +9,18 @@ IF "%PROCESSOR_ARCHITECTURE%"=="x86" (set MSVC_PLATFORM=Win32) else (set MSVC_PL
 REM -------------------------------------------------------------------------
 REM -- Copy CMakeLists.txt to src
 
-copy CMakeLists.txt src\CMakeLists.txt
+REM curl -outf CMakeLists.txt https://raw.githubusercontent.com/conda-forge/winpty-feedstock/master/recipe/CMakeLists.txt
+REM copy CMakeLists.txt src\CMakeLists.txt
 
 
 REM -------------------------------------------------------------------------
 REM -- Run cmake to generate MSVC project files.
 
 cd src
+curl https://raw.githubusercontent.com/conda-forge/winpty-feedstock/master/recipe/CMakeLists.txt -o CMakeLists.txt
 dir
 
-%LIBRARY_BIN%\cmake -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=Release
+%LIBRARY_BIN%\cmake -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=Release
 if errorlevel 1 (
     echo error: cmake failed
     exit /b 1
@@ -35,12 +37,12 @@ nmake || (
 REM -------------------------------------------------------------------------
 REM -- Install the project.
 
-nmake install
+rem nmake install
 
-rem copy include\winpty.h %LIBRARY_INC%
-rem copy include\winpty_constants.h %LIBRARY_INC%
+copy include\winpty.h %LIBRARY_INC%
+copy include\winpty_constants.h %LIBRARY_INC%
 
-rem copy Release\%MSVC_PLATFORM%\winpty.lib %LIBRARY_LIB%
-rem copy Release\%MSVC_PLATFORM%\winpty.dll %LIBRARY_BIN%
-rem copy Release\%MSVC_PLATFORM%\winpty-agent.exe %LIBRARY_BIN%
-rem copy Release\%MSVC_PLATFORM%\winpty-debugserver.exe %LIBRARY_BIN%
+copy bin\winpty.lib %LIBRARY_LIB%
+copy bin\winpty.dll %LIBRARY_BIN%
+copy bin\winpty-agent.exe %LIBRARY_BIN%
+copy bin\winpty-debugserver.exe %LIBRARY_BIN%
