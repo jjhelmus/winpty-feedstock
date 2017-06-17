@@ -16,6 +16,7 @@ REM -------------------------------------------------------------------------
 REM -- Run cmake to generate MSVC project files.
 
 cd src
+dir
 
 %LIBRARY_BIN%\cmake -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=Release
 if errorlevel 1 (
