@@ -12,19 +12,19 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 0
-  skip: True  # [osx or linux or py3k]
+  number: 1
+  skip: True  # [osx or linux or py27]
   features:
-    - vc14
-  msvc_compiler: 14.0
+    - vc14  # [py35 or py36]
 
 requirements:
   build:
     - git
-    - python 2.7*
-    - vc 14
+    - python
+    - cmake
+    - vc 14  # [py35 or py36]
   run:
-    - vc 14
+    - vc 14  # [py35 or py36]
 
 test:
   commands:
