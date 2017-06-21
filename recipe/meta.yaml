@@ -33,10 +33,14 @@ test:
 about:
   home: https://github.com/rprichard/winpty
   license: MIT
-  summary: 'A Windows software package providing an interface similar to a Unix pty-master for communicating with Windows console programs.'
+  summary: |
+    Winpty provides an interface similar to a Unix pty-master for communicating
+    with Windows console programs.
   description: |
-    winpty is a Windows software package providing an interface similar to a Unix pty-master for communicating with Windows console programs. 
-    The package consists of a library (libwinpty) and a tool for Cygwin and MSYS for running Windows console programs in a Cygwin/MSYS pty.
+    Winpty is a Windows software package providing an interface similar to a Unix
+    pty-master for communicating with Windows console programs. The package
+    consists of a library (libwinpty) and a tool for Cygwin and MSYS for running
+    Windows console programs in a Cygwin/MSYS pty.
   doc_url: https://github.com/rprichard/winpty
   dev_url: https://github.com/rprichard/winpty
 
