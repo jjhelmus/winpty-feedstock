@@ -5,7 +5,11 @@ cd %~dp0
 
 set GYP_ARGS=
 IF "%PROCESSOR_ARCHITECTURE%"=="x86" (set MSVC_PLATFORM=Win32) else (set MSVC_PLATFORM=x64)
-call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %MSVC_PLATFORM%
+
+if "%ARCH%" == "32" (set PLATFORM=x86) else (set PLATFORM=x64)
+call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %PLATFORM%
+set DISTUTILS_USE_SDK=1
+set MSSdk=1
 
 REM -------------------------------------------------------------------------
 REM -- Copy CMakeLists.txt to src
