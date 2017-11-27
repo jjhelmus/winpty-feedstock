@@ -7,10 +7,14 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: A Windows software package providing an interface similar to a Unix pty-master for communicating with Windows console programs.
+Summary: Winpty provides an interface similar to a Unix pty-master for communicating
+with Windows console programs.
 
-winpty is a Windows software package providing an interface similar to a Unix pty-master for communicating with Windows console programs.
-The package consists of a library (libwinpty) and a tool for Cygwin and MSYS for running Windows console programs in a Cygwin/MSYS pty.
+
+Winpty is a Windows software package providing an interface similar to a Unix
+pty-master for communicating with Windows console programs. The package
+consists of a library (libwinpty) and a tool for Cygwin and MSYS for running
+Windows console programs in a Cygwin/MSYS pty.
 
 
 Current build status
@@ -68,6 +72,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========

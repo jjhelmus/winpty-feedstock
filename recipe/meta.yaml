@@ -12,19 +12,17 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 2
-  skip: True  # [osx or linux or py27]
-  features:
-    - vc14  # [py35 or py36]
+  number: 3
+  skip: True  # [not win]
 
 requirements:
   build:
     - git
     - python
     - cmake
-    - vc 14  # [py35 or py36]
+    - vc 14
   run:
-    - vc 14  # [py35 or py36]
+    - vs2015_runtime
 
 test:
   commands:
@@ -46,5 +44,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - blink1073
     - ccordoba12
     - andfoy
