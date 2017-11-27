@@ -12,19 +12,19 @@ source:
   sha256: {{ hash }}
 
 build:
-  number: 2
-  skip: True  # [osx or linux or py27]
+  number: 3
+  skip: True  # [not win]
   features:
-    - vc14  # [py35 or py36]
+    - vc14
 
 requirements:
   build:
     - git
     - python
     - cmake
-    - vc 14  # [py35 or py36]
+    - vc 14
   run:
-    - vc 14  # [py35 or py36]
+    - vc 14
 
 test:
   commands:
