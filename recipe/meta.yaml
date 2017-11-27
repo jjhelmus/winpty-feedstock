@@ -24,7 +24,7 @@ requirements:
     - cmake
     - vc 14
   run:
-    - vc 14
+    - vs2015_runtime
 
 test:
   commands:
