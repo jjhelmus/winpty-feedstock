@@ -19,7 +19,6 @@ build:
 
 requirements:
   build:
-    - posix
     - m2w64-toolchain
 
 test:
