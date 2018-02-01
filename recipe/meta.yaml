@@ -14,20 +14,13 @@ source:
      - 0001-disable-msys-compiler-check.patch
 
 build:
-  number: 3
+  number: 4
   skip: True  # [not win]
 
 requirements:
   build:
     - posix
     - m2w64-toolchain
-    - git
-    - curl
-    - python
-    - cmake
-    - vc 14
-  run:
-    - vs2015_runtime
 
 test:
   commands:
@@ -52,3 +45,4 @@ extra:
     - blink1073
     - ccordoba12
     - andfoy
+    - jjhelmus
