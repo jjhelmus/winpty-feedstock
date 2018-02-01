@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/rprichard/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ hash }}
+  patches:
+     - 0001-disable-msys-compiler-check.patch
 
 build:
   number: 3
@@ -17,7 +19,10 @@ build:
 
 requirements:
   build:
+    - posix
+    - m2w64-toolchain
     - git
+    - curl
     - python
     - cmake
     - vc 14
