@@ -1,6 +1,7 @@
 # do not build winpty.exe as this requires a Cygwin/MSYS targetting toolchain
 ./configure
 make build/winpty-agent.exe
+make build/winpty-debugserver.exe
 make build/winpty.dll
 
 # copy the necessary files
